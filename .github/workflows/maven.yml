@@ -30,7 +30,7 @@ jobs:
     - name: Build with Maven
       run: mvn clean install
       
-    - uses: mohitsankholia/springboot-project@v6
+    - uses: mohitsankholia/springboot-project@v3
       name: Build & push Docker image
       with:
           image: mohitsankholia/springboot-project
