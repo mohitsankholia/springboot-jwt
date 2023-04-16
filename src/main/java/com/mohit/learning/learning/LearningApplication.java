@@ -16,11 +16,11 @@ public class LearningApplication {
 
 	public static void main(String[] args) {
 		
-		Logger LOGGER = LogManager.getLogger(LearningApplication.class);
+//		Logger LOGGER = LogManager.getLogger(LearningApplication.class);
 		
 		SpringApplication.run(LearningApplication.class, args);
 		 
-		LOGGER.info("Application Started at port 8081..!");
+//		LOGGER.info("Application Started at port 8081..!");
 	}
 
 }
