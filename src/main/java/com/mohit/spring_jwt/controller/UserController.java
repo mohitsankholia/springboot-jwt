@@ -21,7 +21,7 @@ import com.mohit.spring_jwt.utils.ApplicationUtils;
 import com.mohit.spring_jwt.utils.JwtUtils;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/user-detail")
 public class UserController {
 
 	private static Logger LOGGER = LogManager.getLogger(UserController.class);

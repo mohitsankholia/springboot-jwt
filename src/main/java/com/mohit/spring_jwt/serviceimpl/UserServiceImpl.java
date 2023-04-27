@@ -1,6 +1,7 @@
 package com.mohit.spring_jwt.serviceimpl;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,10 +21,18 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void saveUser(User user) {
-
+		
 		if (user == null) {
-			throw new CustomExceptions();
-		} else {
+			throw new CustomExceptions("user details are empty");
+		} 
+		
+		Optional<User> userDetails = userRepository.findByEmail(user.getEmail());
+
+		if(userDetails.isPresent()) {
+			throw new CustomExceptions("User already exist, please use different email");
+		}
+		
+		else {
 
 			userRepository.save(user);
 		}

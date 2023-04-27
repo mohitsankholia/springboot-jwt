@@ -29,7 +29,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 		Optional<Department> departmentOpt = departmentRespository.findById(id);
 		
 		if(!departmentOpt.isPresent()) {
-			throw new CustomExceptions();
+			throw new CustomExceptions("department not present");
 		}
 		return departmentRespository.findById(id).get();
 
